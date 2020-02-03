@@ -8,6 +8,9 @@ class BahnCardApplicationTests {
 
     @Test
     void contextLoads() {
+        String te ="ssss";
+        System.out.println(te.length());
+
     }
 
 }

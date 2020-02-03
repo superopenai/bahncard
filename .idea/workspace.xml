@@ -2,7 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb6564da-b451-4592-aab8-ac7ad40259de" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/superning/luntan/vo/MerchantResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/superning/luntan/vo/MerchantsRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/superning/luntan/vo/Response.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/generatorConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/jdbc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/logback-spring.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapper/MerchantMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/me/superning/luntan/BahnCardApplication.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/me/superning/luntan/domain/Constants.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/me/superning/luntan/domain/ErrorCode.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/me/superning/luntan/domain/Merchant.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/me/superning/luntan/domain/TemplateColor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/superning/luntan/domain/ErrorCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/superning/luntan/domain/ErrorCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/superning/luntan/domain/vo/PassTemplate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/superning/luntan/vo/PassTemplate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/me/superning/luntan/BahnCardApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/me/superning/luntan/BahnCardApplicationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +93,9 @@
     </option>
   </component>
   <component name="ProjectId" id="1WH2apdY1Mh62bIWlPhUgOpIgOC" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -84,12 +104,34 @@
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql.8&#10;mysql" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="me.superning.luntan" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.LuntanApplication">
+    <configuration name="BahnCardApplicationTests.contextLoads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Bahncard" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="me.superning.luntan.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="me.superning.luntan" />
+      <option name="MAIN_CLASS_NAME" value="me.superning.luntan.BahnCardApplicationTests" />
+      <option name="METHOD_NAME" value="contextLoads" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="LuntanApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="Bahncard" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="me.superning.luntan.BahnCardApplication" />
@@ -97,6 +139,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.BahnCardApplicationTests.contextLoads" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -131,7 +178,8 @@
       <workItem from="1580533459795" duration="219000" />
       <workItem from="1580536390754" duration="821000" />
       <workItem from="1580537233915" duration="88000" />
-      <workItem from="1580604421019" duration="336000" />
+      <workItem from="1580604421019" duration="1252000" />
+      <workItem from="1580711856939" duration="4745000" />
     </task>
     <task id="LOCAL-00001" summary="首次提交（完成变量的定义和拦截器）">
       <created>1580532090946</created>
@@ -220,14 +268,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="64" y="89" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1580525215131" />
-    <state x="958" y="133" key="#com.intellij.ide.util.MemberChooser" timestamp="1580528161302">
+    <state x="958" y="133" key="#com.intellij.ide.util.MemberChooser" timestamp="1580713056610">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="958" y="133" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1580528161302" />
+    <state x="958" y="133" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1580713056610" />
     <state x="449" y="145" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1580519769672">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="449" y="145" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1536.824@0.0.1536.824" timestamp="1580519769672" />
+    <state x="782" y="344" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1580715423011">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="782" y="344" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1536.824@0.0.1536.824" timestamp="1580715423011" />
+    <state x="955" y="300" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages" timestamp="1580715427284">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="955" y="300" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/0.0.1536.824@0.0.1536.824" timestamp="1580715427284" />
     <state x="514" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1579397909107">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -268,9 +324,9 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="585" y="331" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1580536447716" />
-    <state x="425" y="187" key="run.anything.popup" timestamp="1580525764960">
+    <state x="425" y="187" key="run.anything.popup" timestamp="1580714952253">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1580525764960" />
+    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1580714952253" />
   </component>
 </project>
