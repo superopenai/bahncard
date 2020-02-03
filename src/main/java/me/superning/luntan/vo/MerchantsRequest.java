@@ -19,8 +19,6 @@ import javax.annotation.Resource;
 @AllArgsConstructor
 @NoArgsConstructor
 public class MerchantsRequest {
-    @Resource
-    MerchantService merchantService;
 
 
     /**
@@ -44,26 +42,7 @@ public class MerchantsRequest {
      */
     private String address;
 
-    /**
-     * 验证 创建请求的合法性，排除一些错误情况
-     *  @return {@link ErrorCode}
-     */
-    public ErrorCode vaildRequest() {
-        if (merchantService.findByName(this.name) != null) {
-            return ErrorCode.DUPLICATE_NAME;
-        } else if (StringUtils.isEmpty(this.name)) {
-            return ErrorCode.EMPTY_NAME;
-        } else if (this.personalPhone.length() != 11) {
-            return ErrorCode.ERROR_PHONE;
-        } else if (StringUtils.isEmpty(this.logoUrl)) {
-            return ErrorCode.EMPTY_LOGO;
-        } else if (StringUtils.isEmpty(this.licenseUrl)) {
-            return ErrorCode.EMPTY_BUSINESS_LICENSE;
-        } else if (StringUtils.isEmpty(this.address)) {
-            return ErrorCode.EMPTY_ADDRESS;
-        }
-        return ErrorCode.SUCCESS;
-    }
+
 
     /**
      * 将VO请求对象转换成商户对象，转换方法写在这里更合适

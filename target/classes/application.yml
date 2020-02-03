@@ -14,7 +14,7 @@ spring:
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://47.98.178.104:3306/bahncard?useUnicode=true&autoReconnect=ture&characterEncoding=utf-8&useSSL=false
+    url: jdbc:mysql://47.98.178.104:3306/Bahncard?useUnicode=true&autoReconnect=TRUE&characterEncoding=utf-8&useSSL=false
     username: root
     password: yYRwL0hsY6VB30guvaLd
     hikari:

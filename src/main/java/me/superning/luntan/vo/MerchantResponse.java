@@ -13,5 +13,5 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class MerchantResponse {
     /**json的反序列化需要无参构造 商户的主键id 创建失败为 -1 */
-    private Integer id;
+    private Long id;
 }
