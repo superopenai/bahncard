@@ -97,8 +97,8 @@ public class MerchantServiceImpl implements MerchantService {
         } else {
             String templateJson = JSON.toJSONString(passTemplate);
             kafkaTemplate.send(Constants.TEMPLATE_TOPIC,
-                                "测试二号key",
-                                "测试二号value"
+                    Constants.TOKEN_KEY,
+                    Constants.TOKEN_VALUE
                     );
             logger.info("DropPassTemplate + [{}]",passTemplate);
 
