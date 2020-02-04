@@ -6,7 +6,7 @@ package me.superning.luntan.domain;
  */
 public class Constants {
     /** 商户优惠卷投放的 Kafka topic */
-    public static final String TEMPLATE_TOPIC = "merchants-template";
+    public static final String TEMPLATE_TOPIC = "demo";
 
     /** token 的key */
     public static final String TOKEN_KEY = "token";

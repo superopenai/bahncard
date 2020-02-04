@@ -1,5 +1,9 @@
 package me.superning.luntan.service.Impl;
 
+import com.alibaba.fastjson.JSON;
+
+import lombok.extern.slf4j.Slf4j;
+import me.superning.luntan.domain.Constants;
 import me.superning.luntan.domain.ErrorCode;
 import me.superning.luntan.domain.Merchant;
 import me.superning.luntan.mapper.MerchantMapper;
@@ -9,18 +13,28 @@ import me.superning.luntan.vo.MerchantsRequest;
 import me.superning.luntan.vo.PassTemplate;
 import me.superning.luntan.vo.Response;
 import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import tk.mybatis.mapper.entity.Example;
 
 @Service
+@Slf4j
 public class MerchantServiceImpl implements MerchantService {
+    private  final Logger logger = LoggerFactory.getLogger(this.getClass());
+
+    //kafka客户端
+    @Autowired
+    KafkaTemplate<String,String> kafkaTemplate;
+
     @Autowired
     MerchantMapper merchantMapper;
 
     @Override
-    public Merchant findById(Integer id) {
+    public Merchant findById(Long id) {
         return merchantMapper.selectByPrimaryKey(id);
     }
 
@@ -37,8 +51,8 @@ public class MerchantServiceImpl implements MerchantService {
         Response response = new Response();
         MerchantResponse merchantResponse = new MerchantResponse();
         // 校验一下各个属性是否正确。
-        ErrorCode errorCode = vaild(request);
-        // ErrorCode errorCode = request.vaildRequest();
+        ErrorCode errorCode = vaildMerchantsRequest(request);
+
         //出错了
         if (errorCode!=ErrorCode.SUCCESS) {
             merchantResponse.setId(-1L);
@@ -56,17 +70,44 @@ public class MerchantServiceImpl implements MerchantService {
     }
 
     @Override
-    public Response buildMerchanrById(Integer id) {
-        return null;
+    public Response buildMerchanrById(Long id) {
+
+        Response response = new Response();
+
+        Merchant merchant = findById(id);
+
+        //查询的商户不存在
+        if (merchant==null) {
+            response.setErrorCode(ErrorCode.MERCHANTS_NOT_EXIST.getCode());
+            response.setErrorMsg(ErrorCode.MERCHANTS_NOT_EXIST.getMessage());
+        }
+        // 返回的响应对象，把merchant包装进去,无论对错。
+        response.setData(merchant);
+        logger.info("this is the response +[{}]",response);
+        return response;
     }
 
     @Override
     public Response dropPasstemplate(PassTemplate passTemplate) {
-        return null;
+        Response response = new Response();
+        ErrorCode errorCode = validPasstemplate(passTemplate);
+        if (errorCode!=ErrorCode.SUCCESS){
+            response.setErrorMsg(errorCode.getMessage());
+            response.setErrorCode(errorCode.getCode());
+        } else {
+            String templateJson = JSON.toJSONString(passTemplate);
+            kafkaTemplate.send(Constants.TEMPLATE_TOPIC,
+                                "测试二号key",
+                                "测试二号value"
+                    );
+            logger.info("DropPassTemplate + [{}]",passTemplate);
+
+        }
+        return response;
     }
 
     @Override
-    public ErrorCode vaild(MerchantsRequest request) {
+    public ErrorCode vaildMerchantsRequest(MerchantsRequest request) {
         if (findByName(request.getName()) != null) {
             return ErrorCode.DUPLICATE_NAME;
         } else if (StringUtils.isEmpty(request.getName())) {
@@ -80,6 +121,16 @@ public class MerchantServiceImpl implements MerchantService {
         } else if (StringUtils.isEmpty(request.getAddress())) {
             return ErrorCode.EMPTY_ADDRESS;
         }
+        return ErrorCode.SUCCESS;
+    }
+
+    @Override
+    public ErrorCode validPasstemplate(PassTemplate passTemplate) {
+        if (findById(passTemplate.getId())==null)
+        {
+            return ErrorCode.MERCHANTS_NOT_EXIST;
+        }
+
         return ErrorCode.SUCCESS;
     }
 }

@@ -17,11 +17,9 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 public class PassTemplate {
-    @Resource
-    MerchantService merchantService;
 
     /** 优惠卷id*/
-    private Integer id;
+    private Long id;
     /** 优惠卷title*/
     private String title;
     /** 优惠卷描述*/
@@ -39,19 +37,14 @@ public class PassTemplate {
     /** 优惠卷结束时间*/
     private Date end;
 
-    /**
-     * 判断优惠卷的有效性
-     * @return {@link ErrorCode}
-     */
-    public ErrorCode validPasstemplate()
-    {
-        if (merchantService.findById(id)==null)
-        {
-            return ErrorCode.MERCHANTS_NOT_EXIST;
-        }
-
-        return ErrorCode.SUCCESS;
-    }
+//    /**
+//     * 判断优惠卷的有效性
+//     * @return {@link ErrorCode}
+//     */
+//    public ErrorCode validPasstemplate()
+//    {
+//
+//    }
 
 
 

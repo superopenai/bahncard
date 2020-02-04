@@ -17,7 +17,7 @@ public interface MerchantService{
      * @param id 商户id
      * @return {@link Merchant}
      */
-    Merchant findById(Integer id);
+    Merchant findById(Long id);
 
     /**
      * 根据商户名称获取商户对象
@@ -38,7 +38,7 @@ public interface MerchantService{
      * @param id 商户id
      * @return {@link Response}
      */
-    Response buildMerchanrById(Integer id);
+    Response buildMerchanrById(Long id);
 
     /**
      * 投放优惠卷
@@ -47,8 +47,14 @@ public interface MerchantService{
      */
     Response dropPasstemplate(PassTemplate passTemplate);
 
+    /**
+     * 验证商户请求对象是否符合定义
+     * @param request {@link MerchantsRequest} 传入一个商户请求对象
+     * @return {@link ErrorCode}
+     */
+    ErrorCode vaildMerchantsRequest(MerchantsRequest request);
 
-    public ErrorCode vaild(MerchantsRequest request);
 
 
+    ErrorCode validPasstemplate(PassTemplate passTemplate);
 }
