@@ -608,3 +608,30 @@ java.lang.NoSuchMethodError: 'java.lang.Objectjava.lang.Integer com.alibaba.fast
 2020-02-05 16:16:09.648 [http-nio-12456-exec-1] INFO  me.superning.luntan.controller.MerchantsController - Create Merchant-----> [{"address":"测试地址二号","licenseUrl":"licenseUrl测试二号","logoUrl":"url-测试二号","name":"测试二号","personalPhone":"17629358"}]
 2020-02-05 16:16:09.657 [http-nio-12456-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Starting...
 2020-02-05 16:16:10.029 [http-nio-12456-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Start completed.
+2020-02-05 16:46:34.217 [restartedMain] INFO  me.superning.luntan.BahnCardApplication - Starting BahnCardApplication on DESKTOP-5614T9V with PID 29384 (C:\Users\superning\IdeaProjects\bahncard\target\classes started by superning in C:\Users\superning\IdeaProjects\bahncard)
+2020-02-05 16:46:34.220 [restartedMain] INFO  me.superning.luntan.BahnCardApplication - No active profile set, falling back to default profiles: default
+2020-02-05 16:46:34.298 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-02-05 16:46:34.299 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-02-05 16:46:35.254 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[me.superning.luntan]' package. Please check your configuration.
+2020-02-05 16:46:35.752 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 12456 (http)
+2020-02-05 16:46:35.764 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-12456"]
+2020-02-05 16:46:35.765 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-02-05 16:46:35.765 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-02-05 16:46:35.856 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-02-05 16:46:35.857 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1557 ms
+2020-02-05 16:46:36.466 [restartedMain] INFO  t.mybatis.mapper.autoconfigure.MapperCacheDisabler - Clear tk.mybatis.mapper.util.MsUtil CLASS_CACHE cache.
+2020-02-05 16:46:36.467 [restartedMain] INFO  t.mybatis.mapper.autoconfigure.MapperCacheDisabler - Clear tk.mybatis.mapper.genid.GenIdUtil CACHE cache.
+2020-02-05 16:46:36.468 [restartedMain] INFO  t.mybatis.mapper.autoconfigure.MapperCacheDisabler - Clear tk.mybatis.mapper.version.VersionUtil CACHE cache.
+2020-02-05 16:46:36.468 [restartedMain] INFO  t.mybatis.mapper.autoconfigure.MapperCacheDisabler - Clear EntityHelper entityTableMap cache.
+2020-02-05 16:46:36.736 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-02-05 16:46:36.772 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-12456"]
+2020-02-05 16:46:36.807 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 12456 (http) with context path ''
+2020-02-05 16:46:36.815 [restartedMain] INFO  me.superning.luntan.BahnCardApplication - Started BahnCardApplication in 3.407 seconds (JVM running for 5.401)
+2020-02-05 16:46:48.544 [http-nio-12456-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-02-05 16:46:48.546 [http-nio-12456-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-02-05 16:46:48.553 [http-nio-12456-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 6 ms
+2020-02-05 16:46:48.568 [http-nio-12456-exec-1] WARN  o.s.w.s.m.support.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' not supported]
+2020-02-05 16:46:57.889 [http-nio-12456-exec-2] INFO  me.superning.luntan.controller.MerchantsController - Merchant Msg ID ----> [1]
+2020-02-05 16:46:57.957 [http-nio-12456-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Starting...
+2020-02-05 16:46:58.373 [http-nio-12456-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - MyHikariCP - Start completed.
+2020-02-05 16:46:58.427 [http-nio-12456-exec-2] INFO  m.s.luntan.service.Impl.MerchantServiceImpl - this is the response ------>[Response(errorCode=0, errorMsg=, data=Merchant(id=1, name=测试一号, logoUrl=test-LogoUrl, licenseUrl=test-LicenseUrl, personalPhone=12345678912, address=测试地址, isAudit=false))]
