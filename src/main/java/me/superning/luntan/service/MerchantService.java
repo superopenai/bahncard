@@ -38,7 +38,7 @@ public interface MerchantService{
      * @param id 商户id
      * @return {@link Response}
      */
-    Response buildMerchanrById(Long id);
+    Response buildMerchanrById(int id);
 
     /**
      * 投放优惠卷

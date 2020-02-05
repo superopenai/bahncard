@@ -70,11 +70,11 @@ public class MerchantServiceImpl implements MerchantService {
     }
 
     @Override
-    public Response buildMerchanrById(Long id) {
+    public Response buildMerchanrById(int id) {
 
         Response response = new Response();
 
-        Merchant merchant = findById(id);
+        Merchant merchant = findById((long) id);
 
         //查询的商户不存在
         if (merchant==null) {
@@ -83,7 +83,7 @@ public class MerchantServiceImpl implements MerchantService {
         }
         // 返回的响应对象，把merchant包装进去,无论对错。
         response.setData(merchant);
-        logger.info("this is the response +[{}]",response);
+        logger.info("this is the response ------>[{}]",response);
         return response;
     }
 

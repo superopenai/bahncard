@@ -38,7 +38,7 @@ class BahnCardApplicationTests {
     @Test
     void buildMerchanrById(){
 
-        System.out.println(JSON.toJSONString(service.buildMerchanrById(3L)));
+        System.out.println(JSON.toJSONString(service.buildMerchanrById(1)));
     }
 
     @Test
