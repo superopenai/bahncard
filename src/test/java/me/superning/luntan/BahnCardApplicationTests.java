@@ -45,10 +45,10 @@ class BahnCardApplicationTests {
     void dropPasstemplate() {
         PassTemplate passTemplate = new PassTemplate();
         passTemplate.setId(1L);
-        passTemplate.setTitle("测试标题二号");
+        passTemplate.setTitle("测试标题3号");
         passTemplate.setBackGroundColorCode(2);
-        passTemplate.setDesc("测试描述二号");
-        passTemplate.setMessage("测试信息二号");
+        passTemplate.setDesc("测试描述3号");
+        passTemplate.setMessage("测试信息3号");
         passTemplate.setHasToken(false);
         passTemplate.setLimit(100000L);
         passTemplate.setStart(new Date());

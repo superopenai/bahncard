@@ -12,7 +12,7 @@
     <artifactId>luntan</artifactId>
     <version>1.0.0</version>
     <name>bahncard</name>
-    <description>Merchant moudle</description>
+    <description>Merchanyt moudle</description>
 
     <properties>
         <java.version>1.8</java.version>

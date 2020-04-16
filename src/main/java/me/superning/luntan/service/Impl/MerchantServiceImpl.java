@@ -16,9 +16,13 @@ import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.kafka.core.KafkaTemplate;
+import org.springframework.kafka.support.SendResult;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.concurrent.ListenableFuture;
+import org.springframework.util.concurrent.ListenableFutureCallback;
 import tk.mybatis.mapper.entity.Example;
 
 @Service
@@ -26,7 +30,6 @@ import tk.mybatis.mapper.entity.Example;
 public class MerchantServiceImpl implements MerchantService {
     private  final Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    //kafka客户端
     @Autowired
     KafkaTemplate<String,String> kafkaTemplate;
 
@@ -96,10 +99,21 @@ public class MerchantServiceImpl implements MerchantService {
             response.setErrorCode(errorCode.getCode());
         } else {
             String templateJson = JSON.toJSONString(passTemplate);
-            kafkaTemplate.send(Constants.TEMPLATE_TOPIC,
+            ListenableFuture<SendResult<String, String>> future = kafkaTemplate.send(Constants.TEMPLATE_TOPIC,
                     Constants.TOKEN_KEY,
-                    Constants.TOKEN_VALUE
-                    );
+                    Constants.TOKEN_VALUE);
+            future.addCallback(new ListenableFutureCallback<SendResult<String, String>>() {
+                @Override
+                public void onFailure(Throwable throwable) {
+                    logger.info("发送消息[{}] 失败，原因[{}]",Constants.TOKEN_VALUE,throwable.getMessage());
+                }
+
+                @Override
+                public void onSuccess(SendResult<String, String> stringStringSendResult) {
+
+                }
+            });
+
             logger.info("DropPassTemplate + [{}]",passTemplate);
 
         }
